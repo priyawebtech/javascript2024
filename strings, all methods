@@ -1,0 +1,33 @@
+
+
+
+
+????????????????????????
+Min 41 video//Replace
+let msg2='Hello i am Superman'
+console.log(msg2) //Hello i am Superman
+console.log(msg2.replace('o', '@')) //Hell@ i am Superman -- Replace character replace one character one at a time
+console.log(msg2.replace('', '@')) //@Hello i am Superman -- @will add in the starting position
+
+let quote='an apple keep doctor away'
+console.log(quote) //an apple keep doctor away
+console.log(quote.replace('a', '@')) //@n apple keep doctor away-- Replaceall replace all character
+
+????????????????????????
+//indexof-- if u have to search particular word in entire then u use. if that word not available it will written in - minus result will be -1
+
+let searchstring='search "for" a particular string'
+console.log(searchstring) //search "for" a particular string
+let index=searchstring.indexOf('for')
+console.log(index) //8
+
+let index=searchstring.indexOf('all')
+console.log(index) //-1
+
+??????????????????????????
+//includes- value will written true and false. search a particular word
+let searchstring='search "for" a particular string'
+console.log(searchstring.includes('search')) //true
+
+let searchstring='search "for" a particular string'
+console.log(searchstring.includes('hello')) //false
