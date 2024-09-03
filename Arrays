@@ -1,0 +1,176 @@
+Array-- stores multiple value in single variable
+let x=9//variable
+x=[50,60,30,80,90] -> array
+y=['hello', 70, true, 88.9]
+let cars=['volvo' , "bmw" , "audi" , "mustang"]
+
+let arrayName=[]
+
+
+///for reverse things u need to combine all thing together
+let str1='Hello world'
+console.log(str1) //Hello world
+str1=str1.split('')
+console.log(str1)
+(11) ['H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']0: "H"1: "e"2: "l"3: "l"4: "o"5: " "6: "w"7: "o"8: "r"9: "l"10: "d"length: 11[[Prototype]]: Array(0)
+
+console.log(str1)
+console.log(str1.reverse())
+(11) ['d', 'l', 'r', 'o', 'w', ' ', 'o', 'l', 'l', 'e', 'H']
+0
+: 
+"d"
+1
+: 
+"l"
+2
+: 
+"r"
+3
+: 
+"o"
+4
+: 
+"w"
+5
+: 
+" "
+6
+: 
+"o"
+7
+: 
+"l"
+8
+: 
+"l"
+9
+: 
+"e"
+10
+: 
+"H"
+length
+: 
+11
+[[Prototype]]
+: 
+Array(0)
+
+console.log(str1.join(''))
+dlrow olleH
+???????????????
+let str1='Hello world'
+console.log(str1) //Hello world
+str1=str1.split('').reverse().join('')
+console.log(str1)
+
+Hello world
+dlrow olleH
+
+
+// console.log(str1)
+// console.log(str1.reverse())
+// console.log(str1.join(''))
+
+???????????????????
+
+let str1='Hello/world/good/morning'
+console.log(str1)
+console.log(str1.split('/')) 
+
+Hello/world/good/morning
+main.js:3 
+(4) ['Hello', 'world', 'good', 'morning']
+0
+: 
+"Hello"
+1
+: 
+"world"
+2
+: 
+"good"
+3
+: 
+"morning"
+length
+: 
+4
+[[Prototype]]
+: 
+Array(0)
+
+???????????????????
+let str1='Hello#world#good#morning'
+console.log(str1)
+console.log(str1.split('#')) 
+Hello#world#good#morning
+main.js:3 (4) ['Hello', 'world', 'good', 'morning']0: "Hello"1: "world"2: "good"3: "morning"length: 4[[Prototype]]: Array(0)
+
+???????????????????????????
+let myemail='abc@gmail.com'
+console.log(myemail.split('@'))
+
+['abc', 'gmail.com']
+0
+: 
+"abc"
+1
+: 
+"gmail.com"
+length
+: 
+2
+[[Prototype]]
+: 
+Array(0)
+
+??????????????????????????????????
+let str1='Hello world good morning'
+console.log(str1.split('')) //single space in inverted coomma '' split into single word
+
+(24) ['H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', ' ', 'g', 'o', 'o', 'd', ' ', 'm', 'o', 'r', 'n', 'i', 'n', 'g']
+
+let str1='Hello world good morning'
+console.log(str1.split(' ')) // double space b/w inverted '  ' commma split into word
+
+(4) ['Hello', 'world', 'good', 'morning']
+
+??????????????????
+
+//arrays-- 
+let arr2=[]; //empty arr can also declare
+let arr1=['volvo' , "bmw" , "mustang" , 'audi']
+console.log(arr1.length) 
+Re: 4 
+
+console.log(arr1[0])// array also start with zero
+Re: volvo
+
+console.log(arr1[3])// array also start with zero
+Re: audi
+
+console.log(arr1[4])// array also start with zero
+RE: undefined
+
+let arr1=["volvo" , 'bmw' , "mustang" , 'audi' , "Nano" , "Farrari"]
+
+console.log(arr1.length) 
+Re: 6
+console.log(arr1[arr1.length-1]) // always u get last element of the length if you add new value
+Re: Farrari
+
+// If we have to opetation on the each array we can do with loop element
+
+for(i=0; i<=5; i++){
+  console.log("I am " + arr1[i])
+}
+
+Re: I am volvo
+main.js:11 I am bmw
+main.js:11 I am mustang
+main.js:11 I am audi
+main.js:11 I am Nano
+main.js:11 I am Farrari
+????????????????????????
