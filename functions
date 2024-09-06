@@ -4,4 +4,157 @@
 // }
 
 //calling the funciton
-// print();
+// print(); 
+Re:Good morning!
+????????????????????????????
+function printFullName(){
+
+
+}
+function add(){
+  console.log(22+5)
+}
+
+add();
+
+??????????????????
+function printFullName(){
+
+
+}
+function add(a,b){
+  console.log(a+b)
+}
+
+//a,b
+add();
+
+Re: NaN (Not a number)
+???????????????????
+function printFullName(){
+
+
+}
+function add(a,b){
+  console.log(a+b)
+}
+
+//a,b
+add(5,6);
+RE: 11
+???????????????
+
+function printFullName(){
+
+
+}
+function add(a,b){
+  console.log(a+b)
+}
+
+//a,b
+add(5,6);
+add(66,8)
+
+Re:74
+?????????????????????????
+function printFullName(){
+
+
+}
+function add(a,b){
+  console.log("addition of " + a + "+" + b + "=")
+  console.log(a+b)
+}
+
+//a,b-- parameter, arguments
+add(5,6);
+add(66,8)
+
+Re: addition of 5+6=
+main.js:15 11
+main.js:14 addition of 66+8=
+main.js:15 74
+
+??????????????????????
+function printFullName(){
+
+
+}
+function add(a,b){
+  console.log("addition of " + a + "+" + b + "=")
+  console.log(a+b)
+}
+
+function multiply(num1,num2){
+  return num1*num2
+}
+//a,b-- parameter, arguments
+add(5,6);
+add(66,8)
+let answer=multiply(5,7)
+console.log(answer)
+console.log(multiply(9,7))
+
+Re: addition of 5+6=
+main.js:15 11
+main.js:14 addition of 66+8=
+main.js:15 74
+main.js:25 35
+main.js:26 63
+
+??????????????
+
+//calc avg marks
+function printFullName(fname, lname){
+  console.log(fname+" "+ lname)
+}
+printFullName('Priya', 'Thakur' )
+
+??????????????????
+
+//calc avg marks
+function printFullName(fname, mlname, lname){
+  console.log(fname + " " + mlname +" " + lname)
+}
+printFullName('Priya', 'Ram' , 'Thakur' )
+
+Re: Priya Ram Thakur
+
+?????????????
+
+function calcAvgMarks(...marks){
+  console.log(marks)
+}
+calcAvgMarks(60,55,80)
+calcAvgMarks(60,70,55,88)
+
+Re: (3) [60, 55, 80]
+main.js:36 (4) [60, 70, 55, 88]
+
+?????????????????
+
+//normal function
+const myfunc= function(a,b){
+  console.log(a,b)
+}
+myfunc(4,5)
+
+Re: 4 5
+﻿??????????????????
+//arrow functions -> anonymous functions
+
+()=> statement
+
+(parameters)=>statement
+
+()=>{
+  //statements
+}
+
+(para1,para2)=>{
+  //statemenets
+}
+
+
+﻿
