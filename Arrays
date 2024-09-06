@@ -174,3 +174,31 @@ main.js:11 I am audi
 main.js:11 I am Nano
 main.js:11 I am Farrari
 ????????????????????????
+Push : add the item in the end of the array
+Pop: delete the end of the array 
+
+let arr1=["volvo" , 'bmw' , "mustang" , 'audi' , "Nano" , "Farrari"]
+arr1.push('car7')
+console.log(arr1)
+
+Re: (7) ['volvo', 'bmw', 'mustang', 'audi', 'Nano', 'Farrari', 'car7']
+
+let arr1=["volvo" , 'bmw' , "mustang" , 'audi' , "Nano" , "Farrari"]
+arr1.push('car7')
+console.log(arr1)
+arr1.pop()
+arr1.pop()
+console.log(arr1)
+
+Re: ['volvo', 'bmw', 'mustang', 'audi', 'Nano']
+
+let arr1=["volvo" , 'bmw' , "mustang" , 'audi' , "Nano" , "Farrari"]
+arr1.push('car7')
+console.log(arr1)
+arr1.pop()
+arr1.pop()
+console.log(arr1)
+console.log(arr1.includes('avcd')) //false
+console.log(arr1.includes('volvo')) //true
+console.log(arr1.sort()) //(5) ['Nano', 'audi', 'bmw', 'mustang', 'volvo']
+console.log(arr1.sort().reverse()) // (5) ['volvo', 'mustang', 'bmw', 'audi', 'Nano']
