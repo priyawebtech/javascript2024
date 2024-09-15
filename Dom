@@ -1,3 +1,11 @@
+2nd class of Sejal 2nd topic
+
+Dom
+
+jsintro.html file --- create id tag to do munupulation 
+<body>
+<h1 id="myh1">Hello</h1>
+
 const h1=document.getElementById('myh1')
 console.log(h1)
 <h1 id="myh1">Hellow</h1>
@@ -48,6 +56,23 @@ if(isLoggedIn){
 
 Re: Welcome guest
 
+??????????????????????????
+// if use if/else then what change going to happend
+
+const h1 = document.getElementById('myh1')
+console.log(h1);
+// h1.innerHTML = 'I love you Radha';
+h1.style.color = 'green';
+h1.style.font = '50px';
+
+let isLoggedIn = false; // change the value to true and false
+if(isLoggedIn){
+  h1.innerHTML = "I like you so much today I am going to finsih whole js"
+}else{
+  h1.innerHTML = 'I will come more early tommore and I have to finsh all js within 2 days'
+}
+
+< I will come more early tommore and I have to finsh all js within 2 days
 ??????????????????
 <body>
 <h1 id="myh1">Welcome</h1>
