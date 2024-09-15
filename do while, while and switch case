@@ -1,33 +1,82 @@
+3 Aug/ 3rd class
 // // do while loop// Exit controlled loop
-// x=3;
-// do{
-//   console.log('this is do while loop')
-//   x++ //6
-// }while(x<5)
+syntax 
+do {
+  code block to be executed
+}while (condition);
 
-Re: 2times show:  this is do while loop
+x = 0;
+do{
+  console.log('this is do while loop');
+}while(x<5)
+
+// this is do while loop.  ---go into infnite loop but once it going to execute
+
+???????????????????????????????????????
+
+x = 5;
+do{
+  console.log('this is do while loop');
+  x++ //x= x+1
+}while(x<5)
+
+//this is do while loop   -- one time going to execute total x = 6 
+
+??????????????????????????????
+x = 15;
+do{
+  console.log('this is do while loop');
+  x++ //x= x+1
+}while(x<5)
+
+//this is do while loop   -- one time going to execute
+???????????????????????????????????????
+
+x=3;
+do{
+ console.log('this is do while loop')
+   x++ //6
+ }while(x<5)
+
+< 2times show:  this is do while loop
 
 True and false in both going to execute. In false only once going to execute. value false going to execute once. 
 
 ???????????????????????????
-//   // while loop// Entry controlled loop
-  // let num=0;
-  // while(num<5){
-  //   console.log('this is while loop')
-  //   num++ //x=1, x=2, x=5
-  // }
+  // while loop// Entry controlled loop
+Syntax
+while (condition) {
+  // code block to be executed
+}
+
+ let num=0;
+ while(num<5){
+     console.log('this is while loop')
+     num++ //x=1, x=2, x=5
+   }
 Re: 5 tiems execute: this is while loop. Only in true value going to execute
 ////////////
 // let num=10;
-  // while(num<5){
-  //   console.log('this is while loop')
-  //   num++ //x=1, x=2, x=5
-  // }
+  while(num<5){
+     console.log('this is while loop')
+     num++ //x=1, x=2, x=5
+   }
 
 Re: If num is 10<5 it's false. So not going to execute. Only in true going to execute.
 ???????????????????
 
 //switch case
+Syntax
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
 // user will input day-output will day code
 
 let day='';
@@ -73,7 +122,7 @@ let day='sunday';
 
 Re: the code is 0
 ??????????????????????????
-// for loop
+// for loop -- Basic syntax of for loop
 //print number from 0 to 100
 for(i=0; i<=100; i++){
   console.log(i)
@@ -93,3 +142,31 @@ RE: 101 times Hellow
 for(i=100; i>=0; i--){
   console.log(i)
 }
+
+????????????????????????????????????
+//sum  from 0 to 10
+let sum = 1;
+let sum2 = 10;
+for(i=1;i<=10;i++){
+  sum=sum+i
+}
+console.log(sum)
+<56
+
+???????????????????????????
+//print table of
+let table = 6;
+
+for(i=1; i<=10; i++){
+  console.log(table + "x" + i + "=" + table*i)
+}
+<6x1=6
+main.js:5 6x2=12
+main.js:5 6x3=18
+main.js:5 6x4=24
+main.js:5 6x5=30
+main.js:5 6x6=36
+main.js:5 6x7=42
+main.js:5 6x8=48
+main.js:5 6x9=54
+main.js:5 6x10=60
