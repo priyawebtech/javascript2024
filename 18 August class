@@ -1,0 +1,53 @@
+18 August
+Classes in js
+classes are templates of objects. Using classes we can create multiple objects.
+eg: like for multiple car data we want to add. so we can use template of it.
+Class reserved js keyword.
+syntax
+class classname{
+    constructor(){
+  initialize our data
+}
+
+}
+constructor reserved js keyword
+
+eg:
+class MyCar{
+    constructor(color, model, company, name, image){
+     // initializing the data
+     this.color=color;
+     this.model=model;
+     this.company=company;
+     this.name=name;
+     this.image=image; 
+    
+    }
+    stop(){
+      console.log("car stopped");
+    }
+    start(){
+      console.log("car started")
+    }
+    getDetails(){
+      console.log(this)
+      console.log("Name =" + this.name + " " + "Model = " + this.model);
+    }
+}
+
+const car1= new MyCar('red', 'celtos', 'kia motors', 'kia', 'url')
+console.log(car1);
+< MyCar {color: 'red', model: 'celtos', company: 'kia motors', name: 'kia', image: 'url'}
+
+const car1= new MyCar('red', 'celtos', 'kia motors', 'kia', 'url')
+// console.log(car1);
+car1.getDetails()
+<color: "red"company: "kia motors"image: "url"model: "celtos"name: "kia"[[Prototype]]: Object
+main.js:19 Name =kia Model = celtos
+
+const car1= new MyCar('red', 'celtos', 'kia motors', 'kia', 'url')
+const car2= new MyCar('blue', 'thar', 'thar motors', 'thar', 'url')
+console.log(car2);
+// car1.getDetails()
+< MyCar {color: 'blue', model: 'thar', company: 'thar motors', name: 'thar', image: 'url'}
+
