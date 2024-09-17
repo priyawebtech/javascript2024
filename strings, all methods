@@ -1,5 +1,62 @@
+Sunday 4 August
+Sting.js
+let message = 'hellow, Good morning to all!'
+let msg2 = "Hey there";
+msg2= "it's okay"
+msg2 = `it's okay, i am "Superman`
+msg2 = "it's okay, I am \"superman\" "
+console.log(msg2);
+< it's okay, I am "superman"
 
+// use batick `` for get sentence into next line
+msg2 = `hello
+i 
+am
+superman
+`
+console.log(msg2)
+< hello
+i 
+am
+superman
+console.log(typeof msg2)   < string
+console.log(msg2.length)   < 19
+console.log(msg2.charAt()) < h
+console.log(msg2.charAt(4))  <o
+console.log(msg2[4]); < o  //charAt and [] will do same thing 
+console.log(msg2[5]); < empty space b/w 4-6 //charAt and [] will do same thing 
 
+//substring -- don't take negative value otherwise it will count zero
+msg2 = 'hello i am superman';
+console.log(msg2.substring(2,4));  <ll
+
+msg2 = 'hello i am superman';
+console.log(msg2.substring(-4,8)); < hello i -- negative value are not allowed in substing it will consider zero
+
+//toUpperCase and toLowerCase
+msg2 = 'hello i am superman';
+console.log(msg2.toUpperCase())  <HELLO I AM SUPERMAN
+console.log(msg2.toLowerCase())  <hello i am superman
+
+//trim - eleminates white spaces from the beginning and from the ending not from sentence space
+let msgspace = "    hellow how are u   "
+console.log(msgspace)
+<    hellow how are u   
+
+console.log(msgspace.trim());
+<hellow how are u
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//slice, spilce
+// where we use slice for username and password
+//slice(starting position, ending position - not include)
+//slice(negative number) --starts counting from end
+msg2 = 'hello i am superman';
+console.log(msg2.slice(0,6)); <hello 
+msg2 = 'hello i am superman';
+console.log(msg2.slice(0,9)); < hello i a
+console.log(msg2.slice(7));  <  am superman // start cutting from 7th position and give rest sentence
+console.log(msg2.slice(-7));  < uperman ////-7 start counting from end
 
 
 ????????????????????????
