@@ -1,0 +1,8 @@
+Async Await
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!11
+Scope in js ---> let, var, const
+//var -- can re-declare, let-cannot re-declare, const- cannot re-declare
+//var scope is greater than let, let is block scoped, var has global scope
+
