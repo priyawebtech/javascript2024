@@ -195,7 +195,158 @@ Re: 4 5
 callback
 function(function)
 check you js notebook and video
+!!!!!!!!!!!!!!!!!!!!!!!!!111
+Arrow functions were introduced in ES6.
+
+Arrow functions allow us to write shorter function syntax:
+arrow function by harry revisited
+//arrow function
+// We can write in two ways
+const sayHello = ()=>{
+  console.log("Hello");
+}
+sayHello()
+< Hello
+
+!!!!!!!!!!!!!!!!!!!!!!111111
+//we can write like this also simply remove bracket {}
+const sayHello = () => console.log("Hello");
 
 
+sayHello()
+< Hello
+!!!!!!!!!!!!!!!!!!!!1111111
+//if we give some variable 
+const sayHello = (name) => console.log("Hello " + name);
 
+
+sayHello("Priya");
+< Hello Priya
+
+//we can remove parenthesisi bracket also (name) remove bracket name 
+const sayHello = name => console.log("Hello " + name);
+
+
+sayHello("Priya");
+
+//// if we are using two varble together we need to use bracket prathesis we can't remove otherwise going to give error
+const sayHello = (name, greeting ) => console.log(greeting + " " + name);
+
+
+sayHello("Priya", "Good afternoon");
+<Good afternoon Priya
+
+!!!!!!!!!!!!!!!!!!!!11
+const x = {
+  name: "priya",
+  role:"Js Developer",
+  exp:30,
+}
+console.log(x.name, x.exp);
+< priya 30
+!!!!!!!!!!!!!11111
+//show is keyword function we can write another function inside of it. this is also a keyowrd. Refer to this x.
+const x = {
+  name: "priya",
+  role:"Js Developer",
+  exp:30,
+  show: function() {
+    console.log(`The name is ${this.name}`)
+  }
+}
+x.show();
+
+??????????????????????????????
+const x = {
+  name: "priya",
+  role:"Js Developer",
+  exp:30,
+  show: function() {
+    console.log(`The name is ${this.name}\nThe role is ${this.role}`)
+  }
+}
+x.show();
+<The name is priya
+The role is Js Developer
+
+
+????????????????????????
+//settime out we can set
+const x = {
+  name: "priya",
+  role:"Js Developer",
+  exp:30,
+  show: function() {
+    
+    setTimeout(() => {
+      console.log(`The name is ${this.name}\nThe role is ${this.role}`)
+    }, 2000)
+  }
+}
+x.show();
+< It will execute after 2 seconds .
+The name is priya
+The role is Js Developer
 ﻿
+????????????????????
+//we can remove (name) paranthesis name
+
+const sayHello = name => {
+  console.log("greeting" + " " + name)
+  console.log("Hi")
+}
+sayHello("Priya", "Good afternoon");
+<greeting Priya
+main.js:5 Hi
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
+use of this keyoword
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+let winterSnow = person.fullName();
+console.log(winterSnow)
+
+<John Doe
+
+// we can write like this also 
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName : function() {
+    console.log(this.firstName + " " + this.lastName) ;
+  }
+}
+person.fullName();
+
+???????????????????
+
+const person ={
+  firstName: "Priya",
+  lastName: "Thakur",
+  working: "Full stackweb developer",
+  fullName : function(){
+    console.log(this.firstName + " " + this.lastName)
+  }
+}
+person.fullName();
+< Priya Thakur
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Javascript callback
+A callback is a function passed as an argument to another function.
+
+
+"I will call back later!"
+
+A callback is a function passed as an argument to another function
+
+This technique allows a function to call another function
+
+A callback function can run after another function has finished
