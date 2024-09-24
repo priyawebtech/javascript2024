@@ -1,11 +1,24 @@
+Topic : Functions, arrow function, callback, map, 
+instead of for loop we can also use map
+
 // //defined a funciton
-// function print(){
-//   console.log('Good morning!')
-// }
+function myfunction(){
+  console.log("Hare Rama");
+}
+myfunction()
+<Hare Rama
+
+!!!!!!!!!!!!!!!!!!!!!!!
+
+function print(){
+ 
+console.log('Good morning!')
+ }
 
 //calling the funciton
-// print(); 
-Re:Good morning!
+print(); 
+<Good morning!
+
 ????????????????????????????
 function printFullName(){
 
@@ -16,7 +29,14 @@ function add(){
 }
 
 add();
+<27 this is hard coding not recommend to write down like this
+!!!!!!!!!!!!!!!!!!!!!
 
+function add(a,b){
+  console.log(a+b);
+}
+add(1,6)
+,6
 ??????????????????
 function printFullName(){
 
@@ -86,6 +106,21 @@ function add(a,b){
   console.log(a+b)
 }
 
+!!!!!!!!!!!!!!!!!!!!!!!
+function multiply(a,b){
+  return a * b;
+}
+let answer = multiply(3,4);
+console.log(answer);
+<12
+!!!!!!!!!!!!!!!!!!!!!!!!!11
+function printFullName(fname, lname){
+  console.log(fname + " " +lname)
+}
+printFullName("Priya", "Thakur");
+<Priya Thakur
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
 function multiply(num1,num2){
   return num1*num2
 }
@@ -105,7 +140,7 @@ main.js:26 63
 
 ??????????????
 
-//calc avg marks
+
 function printFullName(fname, lname){
   console.log(fname+" "+ lname)
 }
@@ -155,6 +190,12 @@ Re: 4 5
 (para1,para2)=>{
   //statemenets
 }
+!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+
+callback
+function(function)
+check you js notebook and video
+
 
 
 ﻿
