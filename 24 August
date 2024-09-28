@@ -1,7 +1,22 @@
-callback, settimeout, promises, async await
+Topic: callback, settimeout, promises, async await
 
 //function(function) --> callback
-//setTimeout
+function inside function called callback
+
+//setTimeout-- whatever code we write inside setTimeout it will run after given time
+//callback.js
+// function(funciton)-- callback
+// function(arrow funciton) ()=>{}
+//setTimeout function syntax -- very simple 
+// setTimeout(arrow funciton){
+//   //code
+// }
+    
+setTimeout(()=>{
+  //code
+  console.log('I am a callback funciton')
+},5000)
+<I am a callback funciton
 setTimeout(()=>{
   //code
   console.log('I am a callbackfunction.. i will run after 2 seconds')
@@ -9,6 +24,7 @@ setTimeout(()=>{
 
 < I am a callbackfunction.. i will run after 2 seconds
 
+??????????????????????????????????
 /// execution starts and ecution ends will run first then ...
 console.log('execution starts....')
 setTimeout(()=>{
