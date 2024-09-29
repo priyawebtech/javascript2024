@@ -1,0 +1,190 @@
+Topic: callback, settimeout, promises, async await
+
+//function(function) --> callback
+function inside function called callback
+
+//setTimeout-- whatever code we write inside setTimeout it will run after given time
+//callback.js
+// function(funciton)-- callback
+// function(arrow funciton) ()=>{}
+//setTimeout function syntax -- very simple 
+// setTimeout(arrow funciton){
+//   //code
+// }
+    
+setTimeout(()=>{
+  //code
+  console.log('I am a callback funciton')
+},5000)
+<I am a callback funciton
+setTimeout(()=>{
+  //code
+  console.log('I am a callbackfunction.. i will run after 2 seconds')
+},2000)
+
+< I am a callbackfunction.. i will run after 2 seconds
+
+??????????????????????????????????
+/// execution starts and ecution ends will run first then ...
+console.log('execution starts....')
+setTimeout(()=>{
+  //code
+  console.log('I am a callbackfunction.. i will run after 2 seconds')
+},2000)
+console.log('execution ends....')
+<execution starts....
+main.js:7 execution ends....
+main.js:5 I am a callbackfunction.. i will run after 2 seconds
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//callback examples
+function add(x,y){
+  console.log(x+y)
+  console.log(multiply,x,y)
+}
+
+function multiply(x,y){
+  console.log(x * y)
+}
+
+//callback is variable here
+function calculate(callback,x,y){
+ return callback(x,y)
+}
+
+// best example of function inside another function 
+calculate(add,6,4)// add is the callback function here
+// what we done above is 1. calculate, 2 add , 3 calculate, 4 multiply
+<10
+
+//this is call callback hell function under another function. It might got confusing in which error. difficult to find error. very difficult to track
+function(callback,x,y)
+callback(callback2,a,b)
+callback2(callback3,w,r)
+//promises are the solution of callback hell
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+40 min start Promise
+
+//Promises ---> chain operations/data
+//promises is used for --async operations
+// 3 status of promises -- resolve, pending, reject
+//Promise js inbuild class
+//class nameed promise --> I want to make a object called as p1
+// syntax same as class recall 
+//const p1 = new Promise()
+//promise also take arrow funciton ()=>{}
+  //const p1 = new Promise(()=>{})
+//promise has 2 stages resovlve and reject. res, rej these are variable
+
+const p1 = new Promise ((resolve, reject)=>{
+  let status =200;
+  //fetch data -->status --200 --ok, status 404-- error
+  if(status===200){
+    resolve('Data fetched succssfully!')
+  }else{
+    reject('Some went wrong')
+  }
+})
+console.log(p1)
+<Promise {<fulfilled>: 'Data fetched succssfully!'}
+//now I want to add and chain something else also. further operations want to do
+//Data fetched succssfully! You can now use the data
+//for further operations we use .then. then take callback funciton
+
+
+const p1 = new Promise ((resolve, reject)=>{
+  let status =200;
+  //fetch data -->status --200 --ok, status 404-- error
+  if(status===200){
+    resolve('Data fetched succssfully!')
+  }else{
+    reject('Some went wrong')
+  }
+})
+//console.log(p1)
+p1.then(message=>{
+  message= message+' '+ " , You can now use the data"
+  console.log(message);
+})
+<Data fetched succssfully!  , You can now use the data
+
+//when we reject the data we have to use catch
+// change  let status =200; code to 201
+
+const p1 = new Promise ((resolve, reject)=>{
+  let status =201;
+  //fetch data -->status --200 --ok, status 404-- error
+  if(status===200){
+    resolve('Data fetched succssfully!')
+  }else{
+    reject('Some went wrong')
+  }
+})
+//console.log(p1)
+p1.then(message=>{
+  message= message+' '+ " , You can now use the data"
+  console.log(message);
+})
+.catch(err=>console.log(err + ' ' + 'you canot use this data'))
+<Some went wrong you canot use this data
+
+//you can use variable => {}
+//else (variable) => {}  both are same thing   
+
+// you chain further 
+
+const p1 = new Promise ((resolve, reject)=>{
+  let status =200;
+  //fetch data -->status --200 --ok, status 404-- error
+  if(status===200){
+    resolve('Data fetched succssfully!')
+  }else{
+    reject('Some went wrong')
+  }
+})
+//console.log(p1)
+p1.then(message=>{
+  modifiedmsg= message+' '+ " , You can now use the data"
+  console.log(modifiedmsg);
+  return modifiedmsg;
+})
+.then(modifiedmsg=>console.log(modifiedmsg + ' new operation'))
+.catch(err=>console.log(err + ' ' + 'you canot use this data'))
+ <Data fetched succssfully!  , You can now use the data
+main.js:23 Data fetched succssfully!  , You can now use the data new operation
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//How will check the pending stauts in promise we can use setTimeout for that 
+//Actual pending status y will get at api timing
+// we just use in console.log(p1)
+
+const p1 = new Promise ((resolve, reject)=>{
+  let status =200;
+  //fetch data -->status --200 --ok, status 404-- error
+  if(status===200){
+    setTimeout(()=>{
+      resolve('Data fetched succssfully!')
+    },2000)
+    
+  }else{
+    reject('Some went wrong')
+  }
+})
+console.log(p1)
+p1.then(message=>{
+  modifiedmsg= message+' '+ " , You can now use the data"
+  console.log(modifiedmsg);
+  return modifiedmsg;
+})
+.then(modifiedmsg=>console.log(modifiedmsg + ' new operation'))
+.catch(err=>console.log(err + ' ' + 'you canot use this data'))
+ 
+<console.log(p1)  -- Promise {<pending>}
+
+!!!!!!!!!!!!!!!!!!!!!
+//we use fetch to api calling not directly promise. we use promise in fetch. the above eg are only for understanding how promise work
+//fetch() --> fetch data from api, in build js funciotn 
+// fetch('url')
+// .then(data=>{console.log(data)})
+// .catch(err=>console.log(err))
