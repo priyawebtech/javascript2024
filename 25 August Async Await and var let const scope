@@ -1,7 +1,178 @@
+syntax of promise
+Promise inbuild class in js
+let promiseobj = new Promise ((rej,res)=>{})
+// inside of it arrow funciton
+let promiseobj = new Promise ((rej,res)=>{
+    //resolve or reject
+})
+
+Async Await
+//callback hell--(make it easy Promise come) -- and write promises in better way Async Await come
+Callback hell
+    |
+Promise
+    |
 Async Await
 
+//eg: when I have two promises
 
+
+const p1 = new Promise ((resolve, reject)=>{
+  let status =200;
+  //fetch data -->status --200 --ok, status 404-- error
+  if(status===200){
+    setTimeout(()=>{
+      resolve('Data fetched succssfully!')
+    },2000)
+    
+  }else{
+    reject('Some went wrong')
+  }
+})
+
+//we will create one more promise p2
+
+const p2 = new Promise ((resolve, reject)=>{
+  let status =200;
+  //fetch data -->status --200 --ok, status 404-- error
+  if(status===200){
+    setTimeout(()=>{
+      resolve('I am p2!')
+    },5000)
+    
+  }else{
+    reject('Some went wrong in p2!')
+  }
+})
+
+console.log(p1)
+console.log(p2)
+p1.then(message=>{
+  modifiedmsg= message+' '+ " , You can now use the data"
+  console.log(modifiedmsg);
+  return modifiedmsg;
+})
+.then(modifiedmsg=>console.log(modifiedmsg + ' new operation'))
+.catch(err=>console.log(err + ' ' + 'you canot use this data'))
+p2.then(msg=>console.log(msg))
+
+<Promise {<pending>}
+main.js:32 Promise {<pending>}
+main.js:35 Data fetched succssfully!  , You can now use the data
+main.js:38 Data fetched succssfully!  , You can now use the data new operation
+main.js:40 I am p2!
+
+//Now I want that P1 should entirely execute first then p2 execute so for that we use Async Await
+// I will write inside of Async Await
+async function pexample(){
+  // inside of it write p1 and p2
+}
+
+
+
+async function pexample(){
+  const p1 = new Promise ((resolve, reject)=>{
+    let status =200;
+    //fetch data -->status --200 --ok, status 404-- error
+    if(status===200){
+      setTimeout(()=>{
+        resolve('Data fetched succssfully!')
+      },2000)
+      
+    }else{
+      reject('Some went wrong')
+    }
+  })
+  
+  //we will create one more promise p2
+  
+  const p2 = new Promise ((resolve, reject)=>{
+    let status =200;
+    //fetch data -->status --200 --ok, status 404-- error
+    if(status===200){
+      setTimeout(()=>{
+        resolve('I am p2!')
+      },5000)
+      
+    }else{
+      reject('Some went wrong in p2!')
+    }
+  })
+  //here inside the funciton u need to write 
+
+  console.log('fetching p1...')
+   let myp1 = await p1 //due to await --> execution is paused
+  console.log('p1 fetched...' , p1)
+
+  console.log('fetching p2...')
+  let myp2 = await p2
+  console.log('p2 fectched...' , p2)
+  console.log(p1);
+  console.log(p2);
+
+  return [myp1,myp2]
+}
+
+//outside the funciton call the funciton
+pexample()
+
+//when you use async await mostly you don't need .then and comment out all below things. 
+
+// console.log(p1)
+// console.log(p2)
+// p1.then(message=>{
+//   modifiedmsg= message+' '+ " , You can now use the data"
+//   console.log(modifiedmsg);
+//   return modifiedmsg;
+// })
+// .then(modifiedmsg=>console.log(modifiedmsg + ' new operation'))
+// .catch(err=>console.log(err + ' ' + 'you canot use this data'))
+// p2.then(msg=>console.log(msg))
+
+<fetching p1...
+main.js:34 p1 fetched... Promise {<fulfilled>: 'Data fetched succssfully!'}[[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: "Data fetched succssfully!"
+main.js:36 fetching p2...
+main.js:38 p2 fectched... Promise {<fulfilled>: 'I am p2!'}[[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: "I am p2!"
+main.js:39 Promise {<fulfilled>: 'Data fetched succssfully!'}
+main.js:40 Promise {<fulfilled>: 'I am p2!'}
+
+// async await -- you have to use async. u can't only use await. u can alone use async
+//when your funciton is async you can use any promise function .then
+
+pexample().then(data=>console.log(data))
+<fetching p1...
+main.js:34 p1 fetched... Promise {<fulfilled>: 'Data fetched succssfully!'}
+main.js:36 fetching p2...
+main.js:38 p2 fectched... Promise {<fulfilled>: 'I am p2!'}
+main.js:39 Promise {<fulfilled>: 'Data fetched succssfully!'}
+main.js:40 Promise {<fulfilled>: 'I am p2!'}
+main.js:46 (2) ['Data fetched succssfully!', 'I am p2!']
+
+// we can do further operation, using .then 
+
+// without using await
+async function getmyuser() {
+  console.log('fetch users')
+}
+
+getmyuser()
+.then(msg=>console.log(msg))
+<fetch users
+undefined
+
+
+async function getmyuser() {
+  //console.log('fetch users')
+  return 'fetch users'
+}
+
+getmyuser()
+.then(msg=>console.log(msg))
+<fetch users
+
+//promise all method we can use in async
 !!!!!!!!!!!!!!!!!!!!!!!!!!11
+52 min video difference b/w let, var const
 Scope in js ---> let, var, const
 //var -- can re-declare, let-cannot re-declare, const- cannot re-declare
 //var scope is greater than let, let is block scoped, var has global scope
