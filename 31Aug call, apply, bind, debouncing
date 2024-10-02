@@ -134,6 +134,38 @@ printMyName()
 <Riya Shethfrom : Mumbai
 <Rajat Shahfrom : Pune
 
-45 min video
+!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+Debouncing
+for every serach on amazon api call. database saw fetch ho kar aatey hai
+every letter you type there is api calling. We don't any api calling whenever we type any letter. 
+For pink shoes so many api calling can make your website slow. In pink shoes 7 times api calling 
+not good so maximum time 1-2 times api calling good. So you want to restrict the maximum time of api calling
+
+For debouncing
+we have to create two files html file and js file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
  
+  <input type="text" onkeypress="fetchData()">
+  <script src="main.js"></script>
+</body>
+</html>
+
+js file
+
+function fetchData(){
+  console.log('Making api cal...')
+} 
+
+
+<in input type anything coming on console 17 times Making api cal...
+ <if i write in input box Pink shoes so api call 10times Making api cal... so on that case two times api call we want
+check 1st september class 
  
