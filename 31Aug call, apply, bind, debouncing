@@ -3,4 +3,137 @@ Apply
 Bind
 /// Apply-- write into Array[]
 !!!!!!!!!!!!!!!!
-Debouncing
+Call method
+
+let name={
+  firstname:"Rajat",
+  lastname:'Shah',
+  printFullName: function(){
+    console.log(this.firstname + ' ' + this.lastname)
+  }
+}
+name.printFullName()
+  //we have another object name2
+   //funciton borrowing. for that we use call, apply and bind.
+//Instead of writing 2times we will write once printFullName
+let name2={
+    firstname:"Riya",
+    lastname:'Sheth',
+   
+}
+name.printFullName.call(name2)
+<Rajat Shah
+<Riya Sheth
+
+????????????????????????????????????????????
+let name={
+  firstname:"Rajat",
+  lastname:'Shah',
+  
+}
+// name.printFullName()
+//   //we have another object name2
+//    //funciton borrowing. for that we use call, apply and bind. Instead of writing 2times we will write once printFullName
+let name2={
+    firstname:"Riya",
+    lastname:'Sheth',
+    printFullName: function(){
+      console.log(this.firstname + ' ' + this.lastname)
+    }
+   
+}
+//call in js
+name2.printFullName()
+name2.printFullName.call(name)
+<Riya Sheth
+<Rajat Shah
+
+???????????????????????????????
+
+let name={
+  firstname:"Rajat",
+  lastname:'Shah',
+  
+}
+// name.printFullName()
+//   //we have another object name2
+//    //funciton borrowing. for that we use call, apply and bind. Instead of writing 2times we will write once printFullName
+let name2={
+    firstname:"Riya",
+    lastname:'Sheth',
+    printFullName: function(city){
+      console.log(this.firstname + ' ' + this.lastname + "from : " + city)
+    }
+   
+}
+//call in js
+name2.printFullName("Pune")
+name2.printFullName.call(name, "Mumbai")
+
+
+< Riya Shethfrom : Pune
+< Rajat Shahfrom : Mumbai
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Apply method --> apply also work the same but only difference is we will pass the arguments inside parameters in array []
+
+name2.printFullName.call(name, "Mumbai") -- in call
+name2.printFullName.apply(name, ["Mumbai"]) -- in apply
+
+
+let name={
+  firstname:"Rajat",
+  lastname:'Shah',
+  
+}
+
+let name2={
+    firstname:"Riya",
+    lastname:'Sheth',
+    printFullName: function(city){
+      console.log(this.firstname + ' ' + this.lastname + "from : " + city)
+    }
+   
+}
+//call in js
+name2.printFullName("Pune")
+name2.printFullName.apply(name, ["Mumbai"])
+
+< Riya Shethfrom : Pune
+< Rajat Shahfrom : Mumbai
+
+
+!!!!!!!!!!!!!!!!
+//in call and apply printFullName is inside object but in bind outside the object
+//bind method in js
+
+let name={
+  firstname:"Rajat",
+  lastname:'Shah',
+  
+}
+
+let name2={
+    firstname:"Riya",
+    lastname:'Sheth',  
+}
+
+function printFullName(city){
+  console.log(this.firstname + ' ' + this.lastname + "from : " + city)
+}
+
+let printName = printFullName.bind(name2, 'Mumbai')
+console.log(printName)
+let printMyName = printFullName.bind(name, "Pune")
+printName()
+printMyName()
+
+<ƒ printFullName(city){
+  console.log(this.firstname + ' ' + this.lastname + "from : " + city)
+}
+<Riya Shethfrom : Mumbai
+<Rajat Shahfrom : Pune
+
+45 min video
+ 
+ 
