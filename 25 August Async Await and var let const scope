@@ -241,8 +241,109 @@ c = 100; // cannot do this also let can do this
 <will give error
 
 //var -- can re-declare, let-cannot re-declare, const- cannot re-declare
+//var scope is greater than let, let is block scoped, var has global scope
 
 !!!!!!!!!!!!!!!!!!!!
 Let work on funciton let var const
 
 
+
+var x = 10;
+function test(){
+  var b = 100
+  console.log(x,b)
+}
+console.log(x)
+
+test()
+<10
+<10 100
+
+in function case variable can't use outside
+
+var x = 10;
+function test(){
+  var b = 100;
+  let z = 50;
+  console.log(x,z,b)
+}
+test()
+console.log(x)
+console.log(z)
+console.log(x,b)
+
+<10 50 100
+<10
+<: z is not defined 
+﻿// inside function used variable can't be use outside. It will give error
+
+﻿
+
+if(true){
+  var insidevar = 500;
+}
+console.log(insidevar)
+<500
+
+
+
+if(true){
+  var insidevar = 500;
+  let insidelet = 600;
+}
+console.log(insidevar)
+console.log(insidelet)
+<500
+<give error
+
+
+var x = 10;// global variable 
+let abc = 60;global variable 
+function test(){
+//block means restricted
+  var b = 100;
+  let z = 50;
+  console.log(x,z,b)
+  console.log(abc)
+}
+test()
+<10 50 100
+<60
+
+//var -- can re-declare, let-cannot re-declare, const- cannot re-declare
+//var scope is greater than let, let is block scoped, var has global scope
+
+
+function test2(){
+  var x = 100;
+  let y = 50;
+  if(true){
+    console.log(x,y)
+    let z = 200;
+    var xyz = 500;
+  }
+  console.log(z, xyz)
+}
+test2()
+<100 50
+<z is not defined
+
+
+
+let a;
+console.log(a)
+<undefined
+
+
+console.log(a)
+let a = 50;
+
+<Cannot access 'a' before initialization
+
+
+console.log(a)
+var a = 50;
+<undefined
+//by default value of var -- undefined
+
+Hoisting in js
