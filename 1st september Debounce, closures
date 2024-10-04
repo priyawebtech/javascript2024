@@ -1,0 +1,134 @@
+Debounce chek 31 august class
+half of it in this file
+
+html file and js file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ 
+  <input type="text" onkeypress="myfunction()">
+  <script src="main.js"></script>
+</body>
+</html>
+
+js file
+function fetchData(){
+  console.log('Making api cal...')
+} 
+function debounce(func,delay){
+  let timer;
+  return function(){
+    let context = this;
+    args=arguments;
+    clearTimeout(timer)
+    timer=setTimeout(()=>{fetchData.apply(context,arguments)},delay)
+  }
+}
+const myfunction=debounce(fetchData,1000)
+
+//in this code only clearTimeout, setTimeout and apply is inbuild js function
+
+<if we write in input box pink shoes two times api will call
+debounce is not inbuild funciton of js
+
+???????????????????????
+this is propber dobounce example. to reduce the api call on your serach like you search anything on amazon there is api
+calling to reduce the number of  api calling we use debounce. More api calling reduce the website speed. for that we use 
+debounce
+
+//two files for that html file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ 
+  <input type="text" onkeypress="myfunction()">
+  <script src="main.js"></script>
+</body>
+</html>
+
+js files
+
+function fetchData(){
+  console.log('Making api cal...')
+} 
+function debounce(func,delay){
+  let timer;
+
+  return function(){
+    
+    clearTimeout(timer)//clear the current timer
+    timer=setTimeout(()=>{
+      func()
+    },delay)
+  }
+}
+
+const myfunction =debounce(fetchData,1000)//result of debounce funciton
+
+
+< if u search on input bar and search on console log u will get one api . search : Pink shoes for girl 
+<console-- Making api cal... (one api calling). search-- red color , console -- 2 Making api cal...
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1111
+58 min video 
+Closure in js
+
+var msg = 'I am global'
+function greet(){
+  message = "Good morning";
+  console.log(message)
+}
+greet()
+<Good morning
+
+
+var message = 'I am global'
+function greet(){
+  let message = "Good morning";
+  {
+    //whereever u write curly bracket {} the block create there
+    let message = "Good afternoon";
+    console.log(message)
+
+  }
+  // message = "Good night"
+  console.log(message)
+}
+greet()
+<Good afternoon
+<Good morning
+
+
+var message = 'I am global'
+function greet(){
+  let message = "Good morning";
+  {
+    //whereever u write curly bracket {} the block create there
+    let message = "Good afternoon";
+    console.log(message)
+
+  }
+  // message = "Good night"
+  console.log(message)
+  //clouser function
+  let greetresult = function greet2(){
+    console.log('I am greet 2' + message)
+  }
+  return greetresult
+}
+finalgreet = greet()
+finalgreet()
+<Good afternoon
+<Good morning
+<I am greet 2Good morning
