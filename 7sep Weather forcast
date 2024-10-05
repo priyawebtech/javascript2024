@@ -1,1 +1,6 @@
 Weather forcast
+dummy website to design: https://dribbble.com/shots/23159508-Weather-Forecast
+
+for api, javascript has inbuilt method fetch()
+from where we get api link. weather api or open weather app
+https://www.weatherapi.com/ -->weather api link
