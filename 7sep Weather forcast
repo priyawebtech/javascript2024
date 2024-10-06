@@ -4,3 +4,208 @@ dummy website to design: https://dribbble.com/shots/23159508-Weather-Forecast
 for api, javascript has inbuilt method fetch()
 from where we get api link. weather api or open weather app
 https://www.weatherapi.com/ -->weather api link
+sign in in https://www.weatherapi.com/signup.aspx
+eamil: alicebrowntech@gmail.com
+password: nXY87$,,5yq,z#B
+
+https://www.weatherapi.com/docs/
+key: bc406cb4d9f54fe3a6840518240610
+
+
+https://openweathermap.org/api
+key: fde8fbed649e4ccb094a8c091d97b71c
+
+
+query and key is important to give
+
+
+url: http://api.weatherapi.com/v1/current.json?key=bc406cb4d9f54fe3a6840518240610&q=bangalore	
+we are going to use this api url in our fetch data
+
+
+!!!!!!!!!!!!!!!!!!!!!
+//two method either u can use async await or .then to get fetch data on you console
+// using async await . get data on console.log of weather api of bangalore
+
+async function getWeather() {
+   const response = await fetch('http://api.weatherapi.com/v1/current.json?key=bc406cb4d9f54fe3a6840518240610&q=bangalore')
+   
+   const data = await response.json()
+   console.log(data)
+}
+
+getWeather()
+
+<{location: {…}, current: {…}}
+current
+: 
+{last_updated_epoch: 1728189900, last_updated: '2024-10-06 10:15', temp_c: 22.4, temp_f: 72.3, is_day: 1, …}
+location
+: 
+{name: 'Bangalore', region: 'Karnataka', country: 'India', lat: 12.9833, lon: 77.5833, …}
+[[Prototype]]
+: 
+Object
+
+
+//fetch - is an inbuilt js function used to make api calls.
+//fetch returns promise. On fetch we can use .then
+//first parameter of fetch is required - url
+//we are using async await so don't need to use .then if we are using fetch only then we can use .then
+// to get the data u have to convert into json
+
+
+!!!!!!!!!!!!!
+Either u can async await or .then
+
+function fetchData(){
+  fetch('http://api.weatherapi.com/v1/current.json?key=bc406cb4d9f54fe3a6840518240610&q=bangalore')
+  .then(res=>res.json())
+  .then(data=>console.log(data))
+}
+
+fetchData()
+<{location: {…}, current: {…}}
+current
+: 
+{last_updated_epoch: 1728189900, last_updated: '2024-10-06 10:15', temp_c: 22.4, temp_f: 72.3, is_day: 1, …}
+location
+: 
+{name: 'Bangalore', region: 'Karnataka', country: 'India', lat: 12.9833, lon: 77.5833, …}
+[[Prototype]]
+: 
+Object
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+weather api of banglore
+
+created file of html css and js file
+
+html file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Card</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <div class="weather-card">
+    <div class="city-name">Bangalore</div>
+    <p id="current-time">11:00</p>
+    <p id="current-day">Today</p>
+    <div class="weather-icon">
+      <img src="./image/heat-wave.jpg" alt="weather icon">
+    </div>
+    <div class="temp" id="current-temperature">18°C</div>
+    <div class="condition" id="weather-type">Cloudy</div>
+
+    <div>
+      <ul>
+        <li>Humidity: <span id="humidity"></span></li>
+        <li>Wind kph:<span id="wind"></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="weather.js"></script>
+</body>
+</html>
+
+
+??????????????????????
+css file
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.weather-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  color: #333;
+}
+
+.city-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.weather-icon img {
+  width: 80px;
+}
+
+.temp {
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+.condition {
+  font-size: 1.2em;
+  color: #666;
+}
+
+
+?????????????????
+js file
+
+async function getWeather() {
+   const response = await fetch('http://api.weatherapi.com/v1/current.json?key=bc406cb4d9f54fe3a6840518240610&q=bangalore')
+   
+   const data = await response.json()
+   console.log(data)
+
+   const curr_temp = document.getElementById('current-temperature')
+   curr_temp.innerHTML = data.current.temp_c
+
+   const weather_type = document.getElementById('weather-type')
+   weather_type.innerHTML = data.current.condition.text
+
+   const humidity = document.getElementById('humidity')
+   humidity.innerHTML= data.current.humidity
+
+   const wind_kmph = document.getElementById('wind')
+   wind_kmph.innerHTML = data.current.wind_kph
+
+   const current_time= document.getElementById('current-time')
+   
+   let time = data.current.last_updated.split(" ")
+   console.log(time)
+   current_time.innerHTML = time[1]
+   //i only need time not data so there is method in string. that is split method to get 2024-10-06 11:15. 
+   //in split method need to give space other wise every letter will get split (" ")
+
+}
+
+getWeather()
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if you want to change the city
+change in api url :
+http://api.weatherapi.com/v1/current.json?key=bc406cb4d9f54fe3a6840518240610&q=bangalore
+
+change into another city
+http://api.weatherapi.com/v1/current.json?key=bc406cb4d9f54fe3a6840518240610&q=varanasi 
+
+
+we will store key seprately : bc406cb4d9f54fe3a6840518240610
+
+
+check all files in what's up group
+
+
+
+
+
