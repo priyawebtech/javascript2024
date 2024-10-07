@@ -7,5 +7,70 @@ windows user have to download git bash
 git bash is terminal
 for mac user : terminal- by default
 github: repositories meaning projects
-remote- which are not on your laptop/pc
+github repository is called remote- which are not on your laptop/pc
 local-on your laptop
+
+To check git bash verison
+how to check git bash -- (git --version)
+Push your code to github- from local to remote
+Clone:to generate a copy of your code from remote to local laptop. command for that command (git clone url)
+how to set up git config git
+git config-- global user.name "username" priyawebtech
+git config--global user.email "email" alicebrowntech@gmail.com
+
+
+to check config--  (git config -- list)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+How to clone remote repository to your local pc and visual studio code
+Step 1 : go inside git demo floder of visual studio code
+Step 2: open the terminal
+Step 3: Enter this commnad : git clone url
+url is clone https from git hub repository
+eg: git clone https://github.com/priyawebtech/tech_store.git
+
+U -- untracked 
+M -- Modified
+git Status
+untracked- new files that git doesn't know about
+modified: changes inside a known file
+staged:file is ready to be comitted
+unmodified: unchanged
+
+?????????????????
+Now how to go from untracked to staged ?
+commnad: git add url 
+url is the file you want to add 
+check the status command : git status
+git add: add new /changed files from your local laptop to git area
+
+you have lot of file and can't write on file name so there is command for that . step1: commnad: git add.
+step 2: then to check the status: git status
+
+??????????????????????????
+How to commit?
+command: git commit -m "message"
+m means message. what ever message you have you can give here
+eg: git commit -m "this is my first commit"
+
+next step : git push from local to remote
+command: git push origin main.
+
+!!!!!!!!!!!!!!!!!!
+git pull commnad: git fetch origin
+
+!!!!!!!!!!!!!!!!
+configure git
+git config user.name "username"
+check git : git --version
+git status: 
+!!!!!!!!!!!!!!!!!!
+to push the weather forcast  git hub
+command: git init
+: git remote add origin <link>
+<link> of git hub repository. new git repo;s https link
+git status
+git add.
+git commit -m "message"
+git push origin main
+check the the end of video to push the visual studio code to git hub. drap and drop not good
