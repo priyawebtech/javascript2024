@@ -78,7 +78,8 @@ if(age==18){
   console.log('invalid age')
 }
 //////////////
-let age='18';// if using === '18'===18 compare the data and datatype need to equal. one is string and another one is number
+let age='18';// if using === '18'===18 compare the data and datatype need to equal.
+one is string and another one is number
 if(age===18){
   console.log('Your age is 18')// 
 }else{
@@ -121,7 +122,8 @@ if(score<30){
   console.log('Fail')//
 }
 else if(score>=30 && score<60){
-  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+  console.log('Pass')// Bothe conditions needs to true in && logical and then it
+will show Pass other wise fail and check next conditions
 }
 //////////////////
 let score=60
@@ -129,7 +131,8 @@ if(score<30){
   console.log('Fail')//Re: Fail
 }
 else if(score>=30 && score<60){
-  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+  console.log('Pass')// Bothe conditions needs to true in && logical 
+and then it will show Pass other wise fail and check next conditions
 }
 else if(score>=60 && score<80){
   console.log('Firstclass')
@@ -145,7 +148,8 @@ if(score<30){
   console.log('Fail')//Re: Fail
 }
 else if(score>=30 && score<60){
-  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+  console.log('Pass')// Bothe conditions needs to true in && logical and 
+then it will show Pass other wise fail and check next conditions
 }
 else if(score>=60 && score<80){
   console.log('Firstclass')
@@ -161,7 +165,8 @@ if(score<30){
   console.log('Fail')//Re: Fail
 }
 else if(score>=30 && score<60){
-  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+  console.log('Pass')// Bothe conditions needs to true in && logical and 
+then it will show Pass other wise fail and check next conditions
 }
 else if(score>=60 && score<80){
   console.log('Firstclass')
@@ -172,7 +177,8 @@ else if(score >=80 && score <=100){
 else{
   console.log('Invalid score-enter score between 0-100')
 }
-//either the above one other wise u can use this one to show eroror . console.eroror/console.log I can use console.eroro to show the eroror 
+//either the above one other wise u can use this one to show eroror . 
+console.eroror/console.log I can use console.eroro to show the eroror 
 else{
   console.error('Invalid score-enter score between 0-100')
 }
@@ -354,6 +360,5 @@ if(letmedo){
 }
 
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
