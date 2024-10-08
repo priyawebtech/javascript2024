@@ -113,7 +113,8 @@ if(userLoggedIn){
 
 html file:  <h2 id="h2">h2</h2>
 
-js file : document.getElementById('h2').innerHTML='I am h2'// you can do direct like this also but use in short one that is much good
+js file : document.getElementById('h2').innerHTML='I am h2'
+// you can do direct like this also but use in short one that is much good
 
 Re:I am h2 
 ?????????????????????????
