@@ -1,0 +1,359 @@
+
+2nd class of Sejal 1st topic
+Sunday 28 July 2024 - 09:00 IST
+
+
+
+if(condition){
+    // if condition is true this part of logic will work
+}else{
+    // if condition is false this part of logic will work
+}
+
+let age=11;
+if(age>18){
+  console.log('Adult') // if not true it will not show on console browser only true thing will show
+}
+
+/////
+let age=21;
+if(age>18){
+  console.log('Adult')// it true it will show the person is audlt
+}
+Re: Adult
+
+////////
+
+let age=11;
+if(age>18){
+  console.log('Adult')
+}else{
+  console.log('Not an Adult')
+}
+
+Re: Not an Adult
+
+///////////
+let pswd='123abc'
+if(pswd=='123abc'){
+  console.log('Valid Password')
+}else{
+  console.log('Invalid Password')
+}
+
+Re: Valid Password
+
+///// slightly change in the above password show invalid password
+let pswd='123abc'
+if(pswd=='123abcd'){
+  console.log('Valid Password')
+}else{
+  console.log('Invalid Password')
+}
+
+Re: Invalid Password
+
+////////////
+let age=11;
+if(age==18){
+  console.log('Your age is 18')
+}else{
+  console.log('invalid age')// Re: invalid age
+}
+
+/////////////////
+let age=18;
+if(age==18){
+  console.log('Your age is 18')// RE: Your age is 18
+}else{
+  console.log('invalid age')
+}
+
+////////////////
+let age='18';// if u are using stings will get correct result on ==
+//'18'==18
+if(age==18){
+  console.log('Your age is 18')// RE: Your age is 18
+}else{
+  console.log('invalid age')
+}
+//////////////
+let age='18';// if using === '18'===18 compare the data and datatype need to equal. one is string and another one is number
+if(age===18){
+  console.log('Your age is 18')// 
+}else{
+  console.log('invalid age')//Re: invalid age
+}
+///////////////
+let age=18; // === datatype need to be same
+
+if(age===18){
+  console.log('Your age is 18')// Re:Your age is 18
+}else{
+  console.log('invalid age')
+}
+
+/// 90% we use === equal two
+
+///
+Multiple conditions
+score<30- fail
+score 30-60-pass
+60-80-first class
+>80-distiction
+
+if(condition1){
+  statement1
+}else if(condition2){
+  statement2
+}else if(condition3){
+  statement3
+}
+
+//
+let score=20
+if(score<30){
+  console.log('Fail')//Re: Fail
+}
+///
+let score=40
+if(score<30){
+  console.log('Fail')//
+}
+else if(score>=30 && score<60){
+  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+}
+//////////////////
+let score=60
+if(score<30){
+  console.log('Fail')//Re: Fail
+}
+else if(score>=30 && score<60){
+  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+}
+else if(score>=60 && score<80){
+  console.log('Firstclass')
+}
+else if(score>=80 && score <=100){
+  console.log(Distiction)
+}
+
+Re: Firstclass
+///////////
+let score=80
+if(score<30){
+  console.log('Fail')//Re: Fail
+}
+else if(score>=30 && score<60){
+  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+}
+else if(score>=60 && score<80){
+  console.log('Firstclass')
+}
+else if(score >=80 && score <=100){
+  console.log('Distiction')
+}
+
+Re:Distiction
+/////
+let score=103
+if(score<30){
+  console.log('Fail')//Re: Fail
+}
+else if(score>=30 && score<60){
+  console.log('Pass')// Bothe conditions needs to true in && logical and then it will show Pass other wise fail and check next conditions
+}
+else if(score>=60 && score<80){
+  console.log('Firstclass')
+}
+else if(score >=80 && score <=100){
+  console.log('Distiction')
+}
+else{
+  console.log('Invalid score-enter score between 0-100')
+}
+//either the above one other wise u can use this one to show eroror . console.eroror/console.log I can use console.eroro to show the eroror 
+else{
+  console.error('Invalid score-enter score between 0-100')
+}
+
+RE: Invalid score-enter score between 0-100
+????????????????????????
+
+// let age=100
+// if(age<=1){
+//   console.log("Infant")
+// }else if(age>=1 && age<10){
+//   console.log("Toddler")
+// }else if(age>=11 && age<17){
+//   console.log("Teenager")
+// }else if(age>=16 && age<60){
+//   console.log("Adult")
+// }else if(age>=60 && age<=103){
+//   console.log("Old")
+// }else{
+//   console.log("Invalid age")
+// }
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2nd class of Sejal 2nd topic
+Sunday 28 July 2024 
+
+
+Dom
+
+jsintro.html file --- create id tag to do munupulation 
+<body>
+<h1 id="myh1">Hello</h1>
+
+const h1=document.getElementById('myh1')
+console.log(h1)
+<h1 id="myh1">Hellow</h1>
+
+/////////////////////
+const h1=document.getElementById('myh1')
+console.log(h1)
+
+h1.style.color= 'green'
+h1.style.fontSize='50px'
+h1.innerHTML='Welcome'
+
+Re: on console <h1 id="myh1" style="color:green; font-size:50px;">Hellow</h1>
+/// you can perform all operations of css in html
+
+?????????????????????????
+const h1=document.getElementById('myh1')
+console.log(h1)
+
+h1.style.color= 'green'
+h1.style.fontSize='80px'
+// h1.innerHTML='Oh God'
+
+let isLoggedIn=true;
+if(isLoggedIn){
+  h1.innerHTML='Welcome user'
+}else{
+  h1.innerHTML='Welcome guest'
+}
+
+Re: Welcome user
+
+????????????????????
+
+const h1=document.getElementById('myh1')
+console.log(h1)
+
+h1.style.color= 'green'
+h1.style.fontSize='80px'
+// h1.innerHTML='Oh God'
+
+let isLoggedIn=false;/// if use not logged in 
+if(isLoggedIn){
+  h1.innerHTML='Welcome user'
+}else{
+  h1.innerHTML='Welcome guest'
+}
+
+Re: Welcome guest
+
+??????????????????????????
+// if use if/else then what change going to happend
+
+const h1 = document.getElementById('myh1')
+console.log(h1);
+// h1.innerHTML = 'I love you Radha';
+h1.style.color = 'green';
+h1.style.font = '50px';
+
+let isLoggedIn = false; // change the value to true and false
+if(isLoggedIn){
+  h1.innerHTML = "I like you so much today I am going to finsih whole js"
+}else{
+  h1.innerHTML = 'I will come more early tommore and I have to finsh all js within 2 days'
+}
+
+< I will come more early tommore and I have to finsh all js within 2 days
+??????????????????
+<body>
+<h1 id="myh1">Welcome</h1>
+</body>
+
+// Dom section
+document.getElementById('myh1')
+const h1 = document.getElementById('myh1')
+console.log(h1)
+h1.style.color='green'
+// h1.style.fontSize="80px"
+// h1.innerHTML="I can do it"
+// h1.style.fontStyle= "Italic"
+
+let userLoggedIn=false;
+if(userLoggedIn){
+  h1.innerHTML='Welcome back'
+  h1.style.color='Blue'
+}else{
+  h1.innerHTML='Welcome Guest'
+}
+?????????????????///
+<body>
+<h2 id="h2tag"></h2>
+</body>
+
+// const myWork = document.getElementById('h2tag')
+// console.log(myWork)
+// myWork.innerHTML='Hi everyone'
+// myWork.style.fontSize= "70px"
+// myWork.style.color='Pink'
+// myWork.style.fontFamily="Arial"
+// myWork.style.border='2px solid blue'
+// myWork.style.textAlign='center'
+??????????????????????????????????
+
+html file:  <h2 id="h2">h2</h2>
+
+js file : document.getElementById('h2').innerHTML='I am h2'
+// you can do direct like this also but use in short one that is much good
+
+Re:I am h2 
+?????????????????????????
+
+let h2=document.getElementById('h2')
+h2.innerHTML='I can do it'
+h2.style.color='blue'
+h2.style.fontSize='60px'
+
+Re: I can do it
+
+???????????????????????
+let ommm=document.getElementById('love')
+ommm.innerHTML='I love you my family I can do it'
+ommm.style.fontSize="35px"
+ommm.style.fontStyle="italic"
+ommm.style.background="lightblue"
+ommm.style.textAlign="center"
+
+???????????????????????????
+// dom pratice
+
+let h3tag= document.getElementById('idname')
+h3tag.innerHTML="Welcome to Javascript class"
+h3tag.style.fontSize="80px"
+h3tag.style.color='Blue'
+h3tag.style.fontStyle='Italic'
+
+const letmedo=false;
+if(letmedo){
+  h3tag.innerHTML='Come in'
+}else{
+  h3tag.innerHTML='Get out'
+}
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
