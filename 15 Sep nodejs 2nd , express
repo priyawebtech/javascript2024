@@ -1,0 +1,184 @@
+what is header?
+in network tag< search in amazon for shoes<click on all<Click on fetch<Click on name first list<then will get headers.
+Header have more information about our request.
+
+CRUD
+C:Create--add new data : http.post()
+R:Read  : http.get()
+U:Update  : http.put()/http.patch()
+D:Delete  : http.delete()
+
+http by default method:
+ http.post()
+ http.get()
+ http.put()/http.patch()
+ http.delete()
+
+ ?????????????????????????
+ Routing:  It enables the creation of single-page web or mobile apps that allow navigating without refreshing the page. 
+ It also allows us to use browser history features while preserving the right application view.
+
+ same website: we can go on different pages like oldtownmanali/about
+
+ eg:
+
+const http=require('http')
+http.createServer(function(req,res){
+  const url=req.url
+  console.log(url)
+res.write('hello from server')
+res.end()  
+}).listen(8080)
+
+//go in google serach url, write: localhost:8080
+//localhost:8080/about
+//in nodejs terminal u will get the result
+<PS C:\Users\Priya\OneDrive\Desktop\nodejs pratice> node httpmodule.js
+/
+/favicon.ico
+/about
+/favicon.ico
+
+????????????????????????????????????????
+//It will show the data of data.txt file text on nodejs terminal
+
+const http=require('http')
+const fs=require('fs')
+http.createServer(function(req,res){
+  const url=req.url
+  console.log(url)
+  if(url === '/'){
+  fs.readFile('data.txt',(err,data)=>{
+    console.log(data.toString())
+    res.write(data)
+  })
+  }
+
+res.end()  
+}).listen(8080)
+
+</
+hey there, this is my new data! 
+/favicon.ico
+///for routing we are going to use express
+??????????????????????????????????????????????????
+51 min video 
+express js : use with nodejs. express use for backend
+Npm: node package manager
+in terminal u have to write : npm install express
+to install different packages
+< result: added 65 packages in 2s
+
+13 packages are looking for funding
+  run `npm fund` for details
+
+  3 new things have been download
+  1.package.jason
+  2.package-lock.jason
+  3.node_modules
+  package.jason: dependencies we can see here. so we have download express that we can see here.
+
+  node_modules: express ko jo bhi need hai that has been download here. like express package.
+
+  ?????????????????????????????????????????????????
+  now we can create our own server using express
+
+  const express=require('express')
+const app=express();//callled the express function . started express app
+
+app.listen(3000,()=>{
+  console.log('our server is live ...')
+})
+
+<in terminal enter node file name
+<our server is live ...
+go on google.com write localhost:3000
+then our server is live
+
+?????????????????????????????????
+CRUD
+C:Create--add new data : http.post()
+R:Read  : http.get()
+U:Update  : http.put()/http.patch()
+D:Delete  : http.delete()
+
+//to write in our server page
+const express=require('express')
+const app=express();//callled the express function . started express app
+
+///app.get :read the data CRUD
+app.get('/',(req,res)=>{
+  res.send('Welcome to home page!')
+})
+
+app.listen(3000,()=>{
+  console.log('our server is live ...')
+})
+
+<go in terminal write: PS C:\Users\Priya\OneDrive\Desktop\nodejs pratice> node index.js
+our server is live ...
+< refress your server localhost:3000 
+<now you can see : Welcome to home page!
+
+?????????????????????????????????
+in express all CRUD options is available.
+app.post()
+app.delete()
+app.put()
+app.get()
+
+
+?????????????????????????????????????????
+//want to type something in about page
+
+const express=require('express')
+const app=express();//callled the express function . started express app
+
+
+app.get('/',(req,res)=>{
+  res.send('Welcome to home page!')
+})
+///for different url we can route 
+app.get('/about',(req,res)=>{
+  res.send('You are in about section')
+})
+app.listen(3000,()=>{
+  console.log('our server is live ...')
+})
+
+<in terminal type node index.js
+
+
+//in google.com url type: http://localhost:3000/about
+<then u will result: You are in about section
+
+
+??????????????????????????????????????????
+///same goes with delete and post
+
+const express=require('express')
+const app=express();//callled the express function . started express app
+
+app.get('/',(req,res)=>{
+  res.send('Welcome to home page!')
+})
+
+app.get('/about',(req,res)=>{
+  res.send('You are in about section')
+})
+
+app.post('/adduser',(req,res)=>{
+  //write code to add data in mongodb
+})
+
+app.listen(3000,()=>{
+  console.log('our server is live ...')
+})
+
+///same goes with delete and post
+
+//CRUD create - post, read - get, update - put/patch, delete - delete
+
+??????????????????????????????????
+1:15 min video
+
