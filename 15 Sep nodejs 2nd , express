@@ -180,5 +180,117 @@ app.listen(3000,()=>{
 //CRUD create - post, read - get, update - put/patch, delete - delete
 
 ??????????????????????????????????
-1:15 min video
+1: 18 min to create backed for zomato, mogodb
+1. app.listen (port like 3000, 8080)   --- index.js file
+2. Connect to mongodb  --- conn.js file
+3. create routes -----routes.js file
+4. models: that is realted to mongodb. create a collection in mongodb --- models.js file
+
+
+??????????????????????????????????????
+the difference b/w put and  patch ?
+
+eg: if you have to update entire things like
+ name: priya
+email: 057priyathakur@gmail.com
+address: manali
+contact: 7018564987
+//when you update name, email, address, contact then you will use put. but when you 
+have to change the one thing like address from manali to kullu then u will use patch. 
+//put is use to change all things. patch is use to use single data to change or update
+
+
+?????????????????????????????????
+we will create different file and import in index.js file  and 2nd one index.js
+
+1st file: code1.js
+console.log('this is from another file : code1')
+const greet={
+  hello:()=>{
+    console.log('hello')
+  },
+  name:"rajat"
+}
+///what u want to export . when u want to export something u have to import first
+module.exports=greet
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+another file index.js
+
+const express=require('express')
+const greet=require('./code1')
+const app=express();//callled the express function . started express app
+console.log(greet)
+app.get('/',(req,res)=>{
+  res.send('Welcome to home page!')
+})
+
+app.get('/about',(req,res)=>{
+  res.send('You are in about section')
+})
+
+app.post('/adduser',(req,res)=>{
+  //write code to add data in mongodb
+  res.send({
+    name:'sejal'
+  })
+})
+
+app.listen(3000,()=>{
+  console.log('our server is live ...')
+})
+
+
+<then in terminal:
+<PS C:\Users\Priya\OneDrive\Desktop\nodejs pratice> node index.js
+this is from another file : code1
+{ hello: [Function: hello], name: 'rajat' }
+our server is live ...
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//if we comment out all class, function in code1.js file. can we see text in index.js file
+
+code1.js
+console.log('this is from another file : code1')
+// const greet={
+//   hello:()=>{
+//     console.log('hello')
+//   },
+//   name:"rajat"
+// }
+// ///what u want to export 
+// module.exports=greet
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+const express=require('express')
+const xyz=require('./code1')
+const app=express();//callled the express function . started express app
+console.log(xyz)
+app.get('/',(req,res)=>{
+  res.send('Welcome to home page!')
+})
+
+app.get('/about',(req,res)=>{
+  res.send('You are in about section')
+})
+
+app.post('/adduser',(req,res)=>{
+  //write code to add data in mongodb
+  res.send({
+    name:'sejal'
+  })
+})
+
+app.listen(3000,()=>{
+  console.log('our server is live ...')
+})
+
+
+<in terminal: PS C:\Users\Priya\OneDrive\Desktop\nodejs pratice> node index.js
+this is from another file : code1
+{}
+our server is live ...
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
