@@ -1,0 +1,34 @@
+Mongodb?
+create a/c in mongodb
+
+google a/c
+
+Culster is collection of multiple database< database db inside multiple colleciton< inside collection multiple documents . 
+docmuments means our actual data
+
+Culster
+    |
+    DB
+    |
+    Collection
+    |
+    Documents means which data is saved in json format
+
+
+    13 min video
+
+    ???????????????????????????????
+mongodb is a website. mondog compass is a app of mongodb
+    
+    Download mongodb shell -- to connect local host
+    shell means terminal. 
+    <when you download mogodb shell you have to write the commnd in terminal : mongod
+
+    localhost:27017 -- is common for everyone
+    this url is common for everyone: mongodb:/localhost:27017/databasename
+
+    ????????????????
+    what packages do you need to install
+    npm i mongodb mongoose
+
+    look classes and next dobut class
