@@ -10,19 +10,8 @@ if(condition){
     // if condition is false this part of logic will work
 }
 
-let age=11;
-if(age>18){
-  console.log('Adult') // if not true it will not show on console browser only true thing will show
-}
 
-/////
-let age=21;
-if(age>18){
-  console.log('Adult')// it true it will show the person is audlt
-}
-Re: Adult
 
-////////
 
 let age=11;
 if(age>18){
@@ -111,38 +100,8 @@ if(condition1){
   statement3
 }
 
-//
-let score=20
-if(score<30){
-  console.log('Fail')//Re: Fail
-}
-///
-let score=40
-if(score<30){
-  console.log('Fail')//
-}
-else if(score>=30 && score<60){
-  console.log('Pass')// Bothe conditions needs to true in && logical and then it
-will show Pass other wise fail and check next conditions
-}
-//////////////////
-let score=60
-if(score<30){
-  console.log('Fail')//Re: Fail
-}
-else if(score>=30 && score<60){
-  console.log('Pass')// Bothe conditions needs to true in && logical 
-and then it will show Pass other wise fail and check next conditions
-}
-else if(score>=60 && score<80){
-  console.log('Firstclass')
-}
-else if(score>=80 && score <=100){
-  console.log(Distiction)
-}
 
-Re: Firstclass
-///////////
+
 let score=80
 if(score<30){
   console.log('Fail')//Re: Fail
@@ -165,7 +124,7 @@ if(score<30){
   console.log('Fail')//Re: Fail
 }
 else if(score>=30 && score<60){
-  console.log('Pass')// Bothe conditions needs to true in && logical and 
+  console.log('Pass')// Both conditions needs to true in && logical and 
 then it will show Pass other wise fail and check next conditions
 }
 else if(score>=60 && score<80){
@@ -306,18 +265,7 @@ if(userLoggedIn){
   h1.innerHTML='Welcome Guest'
 }
 ?????????????????///
-<body>
-<h2 id="h2tag"></h2>
-</body>
 
-// const myWork = document.getElementById('h2tag')
-// console.log(myWork)
-// myWork.innerHTML='Hi everyone'
-// myWork.style.fontSize= "70px"
-// myWork.style.color='Pink'
-// myWork.style.fontFamily="Arial"
-// myWork.style.border='2px solid blue'
-// myWork.style.textAlign='center'
 ??????????????????????????????????
 
 html file:  <h2 id="h2">h2</h2>
