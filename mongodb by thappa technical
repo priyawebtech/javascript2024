@@ -1,0 +1,31 @@
+https://www.youtube.com/watch?v=rU9ZODw5yvU&t=2s
+thappa technical video for mongodb
+
+Thappa		
+mongodb terminologies		
+	database<collections<documents	
+How mongodb works?		
+		
+installing mongodb		
+	community version	https://www.mongodb.com/try/download/community
+	mongodb shell download	https://www.mongodb.com/try/download/shell
+	mongodb database tools	https://www.mongodb.com/try/download/database-tools
+
+https://github.com/mongodb-js/compass/releases/tag/v1.44.5
+
+mongodb compass : mongodb://localhost:27017
+check everything is working and install in your computer go on cmd/command prompt
+
+to check mongodb 
+type: mongod --version
+to start your server
+no server no database
+
+to check mongoshell
+command: mongosh
+
+then type if you get lot of data
+test> show dbs
+
+video 41 min
+
