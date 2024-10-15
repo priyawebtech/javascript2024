@@ -1,4 +1,5 @@
-Git: version control system. working code. track our code. 2nd use collabrate with people like frontend, backened, and testing
+Git: version control system. working code. track our code.
+2nd use collabrate with people like frontend, backened, and testing
 
 github: website's name where we do all the operations
 
@@ -18,8 +19,17 @@ how to set up git config git
 git config-- global user.name "username" priyawebtech
 git config--global user.email "email" alicebrowntech@gmail.com
 
+//did on git bash terminal
+//Priya@LAPTOP-HJ27TO3S MINGW64 ~
+$ git config --global user.email "alicebrowntech@gmail.com"
 
-to check config--  (git config -- list)
+Priya@LAPTOP-HJ27TO3S MINGW64 ~
+$ git config --global user.name "priyawebtech"
+
+Priya@LAPTOP-HJ27TO3S MINGW64 ~
+$
+
+to check config--  (git config --list)
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 How to clone remote repository to your local pc and visual studio code
@@ -64,13 +74,15 @@ configure git
 git config user.name "username"
 check git : git --version
 git status: 
-!!!!!!!!!!!!!!!!!!
+??????????????????????
+to push the code in git hub command
 to push the weather forcast  git hub
 command: git init
-: git remote add origin <link>
-<link> of git hub repository. new git repo;s https link
-git status
-git add.
-git commit -m "message"
-git push origin main
+command: git remote add origin <link>
+<create a new repository in github <link> of git hub repository. new git repo;s https link
+check it command: git remote -v
+command : git status
+command: git add .    --> . is use to don't want to add file again, all files are included
+command:  git commit -m "message"
+command: git push origin main
 check the the end of video to push the visual studio code to git hub. drap and drop not good
