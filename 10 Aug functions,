@@ -190,11 +190,86 @@ Re: 4 5
 (para1,para2)=>{
   //statemenets
 }
-!!!!!!!!!!!!!!!!!!!!!!!!!!!11
 
-callback
-function(function)
-check you js notebook and video
+//what is callback?
+when you pass function under another function or parameter / arguments
+
+function(function)--callback function
+arrow function where we can use in build function like map, filter. 
+arrow funtion is nameless can't call only use in callback funciton
+
+()=>{}
+(p1)=>{console.log(p1)}
+// p1--- paranthesis
+
+(function(a){
+  console.log(a)
+})
+
+()=>{ }  --arrow function
+callfunction means arrow function u havt to give
+
+
+arrayname=[52,45,12,12,2]
+arrayname.map((elem)=>{
+  console.log(elem)
+})
+//map function take arrayfunciton arguments. map function ka use aray kay upper foo loop we are using
+// arrayname --- genral name xyz
+//elem -- variable
+//array kay upper map function use kar saktey hoo
+
+<52
+ 45
+ 2  12
+ 2
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//using for loop
+let arr1 = ['volvo', 'mustang', 'audi', 'swift','skoda']
+for(i=0;i<=arr1.length-1;i++){
+  console.log("i am " + arr1[i])
+}
+
+<i am volvo
+main.js:3 i am mustang
+main.js:3 i am audi
+main.js:3 i am swift
+main.js:3 i am skoda
+
+//by using map
+let arr1 = ['volvo', 'mustang', 'audi', 'swift','skoda', 'nano']
+arr1.map((car)=>{
+  console.log("I am " + car)
+})
+
+//car --- variable
+<I am volvo
+main.js:7 I am mustang
+main.js:7 I am audi
+main.js:7 I am swift
+main.js:7 I am skoda
+main.js:7 I am nano
+
+// you will get same answer by using for loop and map method. map method used for complicated thing
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+function calcAvgMarks(...marks){
+  let sum=0
+  console.log(marks)
+  //map
+  marks.map((subject)=>{
+    sum=sum+subject
+  })
+  let avg=sum/marks.length
+    console.log("average = " + avg)
+}
+calcAvgMarks(60,55,80)
+
+<(3) [60, 55, 80]
+main.js:9 average = 65
+
 !!!!!!!!!!!!!!!!!!!!!!!!!111
 Arrow functions were introduced in ES6.
 
@@ -237,56 +312,7 @@ sayHello("Priya", "Good afternoon");
 <Good afternoon Priya
 
 !!!!!!!!!!!!!!!!!!!!11
-const x = {
-  name: "priya",
-  role:"Js Developer",
-  exp:30,
-}
-console.log(x.name, x.exp);
-< priya 30
-!!!!!!!!!!!!!11111
-//show is keyword function we can write another function inside of it. this is also a keyowrd. Refer to this x.
-const x = {
-  name: "priya",
-  role:"Js Developer",
-  exp:30,
-  show: function() {
-    console.log(`The name is ${this.name}`)
-  }
-}
-x.show();
 
-??????????????????????????????
-const x = {
-  name: "priya",
-  role:"Js Developer",
-  exp:30,
-  show: function() {
-    console.log(`The name is ${this.name}\nThe role is ${this.role}`)
-  }
-}
-x.show();
-<The name is priya
-The role is Js Developer
-
-
-????????????????????????
-//settime out we can set
-const x = {
-  name: "priya",
-  role:"Js Developer",
-  exp:30,
-  show: function() {
-    
-    setTimeout(() => {
-      console.log(`The name is ${this.name}\nThe role is ${this.role}`)
-    }, 2000)
-  }
-}
-x.show();
-< It will execute after 2 seconds .
-The name is priya
-The role is Js Developer
 ﻿
 ????????????????????
 //we can remove (name) paranthesis name
@@ -300,30 +326,7 @@ sayHello("Priya", "Good afternoon");
 main.js:5 Hi
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-use of this keyoword
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  id: 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-let winterSnow = person.fullName();
-console.log(winterSnow)
 
-<John Doe
-
-// we can write like this also 
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  id: 5566,
-  fullName : function() {
-    console.log(this.firstName + " " + this.lastName) ;
-  }
-}
-person.fullName();
 
 ???????????????????
 
