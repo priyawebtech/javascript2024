@@ -20,6 +20,7 @@ i
 am
 superman
 console.log(typeof msg2)   < string
+//length--to check how many characters are there 
 console.log(msg2.length)   < 19
 console.log(msg2.charAt()) < h
 console.log(msg2.charAt(4))  <o
@@ -88,3 +89,15 @@ console.log(searchstring.includes('search')) //true
 
 let searchstring='search "for" a particular string'
 console.log(searchstring.includes('hello')) //false
+
+???????????????????????????????????????????
+array in js
+array-stores multiple value in a single variable
+let x=9//variable
+x=[50,60,30,80,90]=> array
+y=['hello', 70, true, 88.9]
+let cars=["volvo", "bmw", "audi", "mustang"]
+let arrayname = []
+
+1:3 min video
+
