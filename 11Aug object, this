@@ -1,0 +1,408 @@
+css units:
+absolute(not depandant)---> px,pt,in, cm, mm
+
+relative(depandant)--->em,rem, vw :viewwidth,vh :viewheight
+
+OBJECTS in js: js is a object oriented language
+
+eg: car is a object
+properties of car
+color
+weight
+name
+model
+company
+type
+
+functions of car
+start()
+stop()
+applybreaks
+playmusic
+
+objects eg: laptop, tv, washing machine
+
+object syntax
+  const car={
+  //properties
+  //function
+}
+
+
+
+???????????????????????????
+const car={
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+}
+console.log(car)
+<{ color: 'white', name: 'kia', company: 'kiamotors', model: 'celtos' }
+
+
+???????????????????????????????
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    console.log('car started')
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  }
+}
+console.log(car)
+<PS C:\Users\Priya\OneDrive\Desktop\kimo july class> node main.js
+{
+  color: 'white',
+  name: 'kia',
+  company: 'kiamotors',
+  model: 'celtos',
+  start: [Function: start],
+  stop: [Function: stop],
+  playmusic: [Function: playmusic]
+}
+
+
+???????????????????????????????
+//want to excess particular properity
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    console.log('car started')
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  }
+}
+console.log(car.model)
+<celtos 
+
+??????????????????????????????????
+
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    // console.log('car started')
+    return "car started"
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  }
+}
+console.log(car.model)
+let result=car.start()
+console.log(result)
+
+<celtos
+car started
+
+????????????????????????????????????????
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    // console.log('car started')
+    return "car started"
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  },
+  xyz:()=>{
+    
+  }
+}
+console.log(car.model)
+console.log (car.start())
+<celtos
+car started
+
+?????????????????????????????????????????
+//this-keyword stores the current object
+
+car                  |    student                | teacher
+name                 |    name                   |  name
+getDetils(){         |   getDetils(){            | getDetils(){  
+  console.log(this)  |      console.log(this)    |    console.log(this)
+}                    |    }                      |    }
+
+same properties in all three objects. it can be confusing so solution of it using this keyword
+
+this keyword --> stores the current object
+
+
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    // console.log('car started')
+    return "car started"
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  },
+  getDetails(){
+    console.log(this)
+  }
+
+}
+
+console.log(car.model)
+console.log(car.start())
+car.getDetails()
+<celtos
+car started
+{
+  color: 'white',
+  name: 'kia',
+  company: 'kiamotors',
+  model: 'celtos',
+  start: [Function: start],
+  stop: [Function: stop],
+  playmusic: [Function: playmusic],
+  getDetails: [Function: getDetails]
+}
+
+??????????????????????????????????
+//if you have two objects
+
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    // console.log('car started')
+    return "car started"
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  },
+  getDetails(){
+    console.log(this)
+  }
+
+}
+
+const myobject={
+
+  name:'priya',
+  department:"IT",
+  getDetails:function(){
+    console.log(this)
+  }
+}
+
+car.getDetails();
+myobject.getDetails()
+
+<PS C:\Users\Priya\OneDrive\Desktop\kimo july class> node main.js
+{
+  color: 'white',
+  name: 'kia',
+  company: 'kiamotors',
+  model: 'celtos',
+  start: [Function: start],
+  stop: [Function: stop],
+  playmusic: [Function: playmusic],
+  getDetails: [Function: getDetails]
+}
+{ name: 'priya', department: 'IT', getDetails: [Function: getDetails] }
+
+??????????????????????????????????
+//need specific data from objects
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    // console.log('car started')
+    return "car started"
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  },
+  getDetails(){
+    // console.log(this)
+    console.log("Name = " +this.name + " " + "Model = " + this.model)
+  },
+
+};
+
+const myobject={
+
+  name:'priya',
+  department:"IT",
+  getDetails:function(){
+    // console.log(this)
+    console.log("name = " + this.name + " " + "department = " + this.department)
+  },
+};
+
+car.getDetails();
+myobject.getDetails()
+
+<Name = kia Model = celtos
+name = priyadepartment = IT
+
+?????????????????????????????????????
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  //functions
+  start:function(){
+    // console.log('car started')
+    return "car started"
+  },
+  stop(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  },
+  getDetails(){
+    console.log(this)
+    console.log("Name = " +this.name + " " + "Model = " + this.model)
+  },
+
+};
+
+const myobject={
+
+  name:'priya',
+  department:"IT",
+  getDetails:function(){
+    // console.log(this)
+    console.log("name = " + this.name + " " + "department = " + this.department)
+  },
+};
+
+car.getDetails();
+myobject.getDetails()
+<PS C:\Users\Priya\OneDrive\Desktop\kimo july class> node main.js
+{
+  color: 'white',
+  name: 'kia',
+  company: 'kiamotors',
+  model: 'celtos',
+  start: [Function: start],
+  stop: [Function: stop],
+  playmusic: [Function: playmusic],
+  getDetails: [Function: getDetails]
+}
+Name = kia Model = celtos
+name = priya department = IT
+
+??????????????????????????????????
+
+const car={
+  //properity
+  color:'white',
+  name:'kia',
+  company:'kiamotors',
+  model:'celtos',
+  Image:'url',
+  //functions
+  start:function(){
+    // console.log('car started')
+    return "car started"
+  },
+  stop:function(){
+    console.log('car stopped')
+  },
+  playmusic:function(){
+    console.log('music on')
+  },
+  getDetails(){
+    console.log(this)
+    console.log("Name = " +this.name + " " + "Model = " + this.model)
+  },
+
+};
+
+const myobject={
+
+  name:'priya',
+  department:"IT",
+  getDetails:()=>{
+    // console.log(this)
+    console.log("name = " + this.name + " " + "department = " + this.department)
+  },
+};
+
+car.getDetails();
+myobject.getDetails()
+
+< model: 'celtos',
+PS C:\Users\Priya\OneDrive\Desktop\kimo july class> node main.js
+{
+  color: 'white',
+  name: 'kia',
+  company: 'kiamotors',
+  model: 'celtos',
+  Image: 'url',
+  start: [Function: start],
+  stop: [Function: stop],
+  playmusic: [Function: playmusic],
+  getDetails: [Function: getDetails]
+}
+Name = kia Model = celtos
+name = priya department = IT
+
+
+
+this keyword only can use inside  objects not outside of it otherwise will give empty
+
+???????????????????
