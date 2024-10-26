@@ -11,21 +11,336 @@ installing mongodb
 	mongodb shell download	https://www.mongodb.com/try/download/shell
 	mongodb database tools	https://www.mongodb.com/try/download/database-tools
 
+atlas and compass we will talk latter
 https://github.com/mongodb-js/compass/releases/tag/v1.44.5
 
 mongodb compass : mongodb://localhost:27017
-check everything is working and install in your computer go on cmd/command prompt
+
+check everything is working and install in your computer.
+go on cmd/command prompt to check that everthing is working fine.
 
 to check mongodb 
 type: mongod --version
 to start your server
 no server no database
 
-to check mongoshell
+to check mongoshell. mongosh means-- mongoshell
 command: mongosh
 
-then type if you get lot of data
-test> show dbs
+then type if you get lot of data related to mongosh
+test> command:  show dbs
 
-video 41 min
+????????????????????????????????????
+Managing database in Mongodb
+creating/deleting database
+creating/deleting collections
+
+Mongodb terminologies:  database>collections> documents
+
+Managing database and collections
+syntax for that
+show dbs;   --- if you want to see that database
+use <database-name>;  --- want to create a new database
+db.dropDatabase();    ----- want to delete database
+
+
+for collections syntax	---
+show collections;  	---- want to see
+db.createCollection('<collection-name>'); 	---- want to create new collections
+db.<collection-name>.drop(); 	---want to delete collecitons
+
+////////////////////
+Now open your cmd--command prompt or terminal.
+
+start your server write: mongosh
+look which database you have:  show dbs /test> show dbs
+or test> show databases
+
+now we are going to create new database related to student
+test> use students
+
+switched to db students
+students> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+//we can't see our students database in these 3 options
+admin>cls 	---The cls command clears the console. You can also clear the console with Ctrl + L and console. clear() .
+
+admin> show dbs
+admin   40.00 KiB
+config  96.00 KiB
+local   72.00 KiB
+admin> use students
+switched to db students
+students>
+//you won't see a database listed in the output of the show dbs command until that database 
+contains at least one collection with data in it.
+
+//lets create a collection
+admin> show dbs  // to check database
+admin   40.00 KiB
+config  96.00 KiB
+local   72.00 KiB
+admin> use students
+
+switched to db students
+students> show collections  /// to check that students collections is available or not
+
+students> db.createCollection('data') /// to create collections
+{ ok: 1 }
+students> show collections
+data
+students> cls
+
+????????????????????
+students> show dbs ///check
+admin     40.00 KiB
+config    96.00 KiB
+local     72.00 KiB
+students   8.00 KiB  ///finally you get students database
+students> show collections
+data
+students> db.data.drop() /// want to delete data collections
+true
+students> show collections
+
+students> db.dropDatabase()  //want to delete database
+{ ok: 1, dropped: 'students' }
+students> show dbs
+admin   40.00 KiB
+config  96.00 KiB
+local   72.00 KiB
+students>
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+50 min
+Insert operation in mongodb
+1. inserting documents in mongodb
+2. when to use quotes and when not to?
+3. ordered and unordered inserts
+4. case sensitivity in mongodb
+
+1. Inserting documents in mongodb
+syntax of it:  
+	///want to insert one data
+  db.<collection-name>.insertOne({
+	field1:value1,
+	field2:value2,
+	...
+  });
+
+
+///want to insert many
+  db.<collection-name>.insertMany([
+    	{field1:value1,field2:value2,...},
+	{field1:value1,field2:value2:value,..},
+	//...
+  ]);
+
+
+go in terminal again
+students> use students
+already on db students
+students> cls
+//students database hasbeen created 
+
+///if you insert docment inside it collection will create automatically. it.s default behaviour
+C:\Users\Priya>mongosh
+Current Mongosh Log ID: 671bba8caecddf3a8286b01c
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2
+students> db.data.insertOne({'name':'Vinod', age:29})
+{
+  acknowledged: true,
+  insertedId: ObjectId('671bc737aecddf3a8286b01d')
+}
+
+//docments>inside collections>database
+//if you want to insert manay data
+students> db.data.insertManay([ {'name':'vinod', age:29}, {'name':'binamra',age:20}, {'name':'arjun', agr:30} ])
+TypeError: db.data.insertManay is not a function
+students>  db.data.insertMany([ {'name':'vinod', age:29}, {'name':'binamra',age:20}, {'name':'arjun', agr:30} ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('671cd70caecddf3a8286b01e'),
+    '1': ObjectId('671cd70caecddf3a8286b01f'),
+    '2': ObjectId('671cd70caecddf3a8286b020')
+  }
+}
+
+///want to see the database
+students> db.data.find()
+[
+  { _id: ObjectId('671bc737aecddf3a8286b01d'), name: 'Vinod', age: 29 },
+  { _id: ObjectId('671cd70caecddf3a8286b01e'), name: 'vinod', age: 29 },
+  {
+    _id: ObjectId('671cd70caecddf3a8286b01f'),
+    name: 'binamra',
+    age: 20
+  },
+  { _id: ObjectId('671cd70caecddf3a8286b020'), name: 'arjun', agr: 30 }
+]
+//so you can insert multiple data like this
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@
+2. When to use Quotes and when not to?
+Special characters: if a field name contains special characters or spaces, or starts with a numeric digit, 
+using quotes is necessary
+Reserved words:If a name field is a reserved keyword in mongodb, use quotes distinguish it from the reserved keyword.
+
+students> db.data.insertOne({'name':'vinod', age:29, 'course name':'cs'})
+{
+  acknowledged: true,
+  insertedId: ObjectId('671cda05aecddf3a8286b021')
+}
+students> show dbs
+admin     40.00 KiB
+config    96.00 KiB
+local     72.00 KiB
+students  72.00 KiB
+students> db.data.find()
+[
+  { _id: ObjectId('671bc737aecddf3a8286b01d'), name: 'Vinod', age: 29 },
+  { _id: ObjectId('671cd70caecddf3a8286b01e'), name: 'vinod', age: 29 },
+  {
+    _id: ObjectId('671cd70caecddf3a8286b01f'),
+    name: 'binamra',
+    age: 20
+  },
+  { _id: ObjectId('671cd70caecddf3a8286b020'), name: 'arjun', agr: 30 },
+  {
+    _id: ObjectId('671cda05aecddf3a8286b021'),
+    name: 'vinod',
+    age: 29,
+    'course name': 'cs'
+  }
+]
+
+!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Ordered and Unordered Inserts
+if you add dublicate data and do error on info list you have 2 error on the list and want the rest will insert it 
+and don't show rest on the error list
+
+students> db.data.insertMany([{'name':'vinod', age:29}, { _id: ObjectId('671cd70caecddf3a8286b020'),'name':'binamra',age:20}, {'name':'arjun', agr:30}])
+//like here the id is dublicate so that's why show eroro and later correct info would also show on erorr . so make it
+that don't show on this latter correct info we need to further command for that , {orderrf:false})
+
+students> db.data.insertMany([{'name':'vinod', age:29}, { _id: ObjectId('671cd70caecddf3a8286b020'),'name':'binamra',age:20}, {'name':'arjun', agr:30}], {ordered:false})
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Case Sensitivity in Mongodb
+what are you are writing the same thing you have to call it other wise not going to give info
+eg: db.Product.insertOne({name:'thapa', age:30});
+	db.product.insertOne({name:''thapa, age:30});
+
+both are Product and product different things here.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Read operations in MongoDb
+.Reading documents in Mongodb
+.Comparison operators 
+.Logical operators
+.Cursors in Mongodb
+.Elements operators
+
+Finding documents in Mongodb
+find()
+db.collection_name.find({key:value})
+//basically find() present multiple result. ek saw jada result daygha
+
+findOne()
+db.collection_name.findOne({key:value})
+
+eg:
+students> db.data.find()
+[
+  { _id: ObjectId('671bc737aecddf3a8286b01d'), name: 'Vinod', age: 29 },
+  { _id: ObjectId('671cd70caecddf3a8286b01e'), name: 'vinod', age: 29 },
+  {
+    _id: ObjectId('671cd70caecddf3a8286b01f'),
+    name: 'binamra',
+    age: 20
+  },
+  { _id: ObjectId('671cd70caecddf3a8286b020'), name: 'arjun', agr: 30 },
+  {
+    _id: ObjectId('671cda05aecddf3a8286b021'),
+    name: 'vinod',
+    age: 29,
+    'course name': 'cs'
+  },
+  { _id: ObjectId('671cdd20aecddf3a8286b022'), name: 'vinod', age: 29 },
+  {
+    _id: ObjectId('671cdd20aecddf3a8286b023'),
+    name: 'binamra',
+    age: 20
+  },
+  { _id: ObjectId('671cdd20aecddf3a8286b024'), name: 'arjun', agr: 30 },
+  { _id: ObjectId('671cdd5baecddf3a8286b025'), name: 'vinod', age: 29 },
+  { _id: ObjectId('671cded1aecddf3a8286b027'), name: 'vinod', age: 29 },
+  { _id: ObjectId('671cded1aecddf3a8286b028'), name: 'arjun', agr: 30 }
+]
+//now we can see that here so many vindo name person. Now how many boys has same name as Vinod
+students> db.data.find({'name':'vinod'})
+[
+  { _id: ObjectId('671cd70caecddf3a8286b01e'), name: 'vinod', age: 29 },
+  {
+    _id: ObjectId('671cda05aecddf3a8286b021'),
+    name: 'vinod',
+    age: 29,
+    'course name': 'cs'
+  },
+  { _id: ObjectId('671cdd20aecddf3a8286b022'), name: 'vinod', age: 29 },
+  { _id: ObjectId('671cdd5baecddf3a8286b025'), name: 'vinod', age: 29 },
+  { _id: ObjectId('671cded1aecddf3a8286b027'), name: 'vinod', age: 29 }
+]
+//so easily we have find it
+
+//if you want to find one
+students> db.data.findOne({'name':'vinod'})
+{ _id: ObjectId('671cd70caecddf3a8286b01e'), name: 'vinod', age: 29 }
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Importing JSON in Mongodb
+//how to import in mongodb eg: I have json data and now I need to import it in database inside
+command:  syntax
+1.  mongoimport jsonfile.json -d database_name -c collection_name
+jsonfile--file name which you want to import
+
+{
+	"name":"Binamra",
+	"age":20'
+}
+{
+	"name":"Thapa",
+	"age":21,
+}
+
+2. syntax:  mongoimport products.json -d shop -c products
+3.  syntax:  mongoimport products.json -d shop -c products --jsonArray
+		[{
+			"name":"Binamra",
+			"age":20'
+		},
+		{
+			"name":"Thapa",
+			"age":21,
+		}]
+
+//if documents not inside then use first one command. if there is array then use the 3 syntax
+//here,--jsonArray accepts the import of data expressed with multiple mongodb documents within a single JSON array.
+
+//if you want to export from mongodb files
+syntax: mongoexport -d database_name -c collection_name
+	mongoexport -d shop -c sales -o filename
+o--out
+
+//limited to import of 16mb or smaller file
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+1: 16 min video
+Comparison operators
+
+
+
 
